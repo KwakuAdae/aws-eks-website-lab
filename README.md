@@ -312,7 +312,7 @@ running for a month costs **~$200**, so always clean up.
 - GitOps with **Argo CD** or **Flux**
 - CI/CD: GitHub Actions → ECR → `kubectl set image`
 - Cluster autoscaling with **Karpenter**
-- Compare with the sister lab: [ECS Fargate lab](https://github.com/KwakuAdae/aws-ecr-ecs-fargate-lab)
+- Compare with the sister lab: [ECS Fargate lab](https://github.com/KwakuAdae/aws-ecs-fargate-website-lab)
 
 ## Troubleshooting
 
