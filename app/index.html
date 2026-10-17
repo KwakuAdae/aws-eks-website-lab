@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EKS Website Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Hello from Amazon EKS ☸️</h1>
+    <p>This static website was built into a Docker image, pushed to <strong>Amazon ECR</strong>,
+       and is running as a <strong>Kubernetes Deployment</strong> on an <strong>Amazon EKS</strong> cluster,
+       exposed through an AWS load balancer.</p>
+    <ul class="pipeline">
+      <li>Docker build</li>
+      <li>Amazon ECR</li>
+      <li>EKS Deployment</li>
+      <li>Service (LoadBalancer)</li>
+    </ul>
+    <p class="meta">Served by pod: <code>__POD_NAME__</code> · Version: <code>v1</code> · Lab by Kwaku Adae</p>
+  </main>
+</body>
+</html>

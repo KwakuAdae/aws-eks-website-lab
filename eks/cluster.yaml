@@ -1,0 +1,33 @@
+# eksctl cluster config: a small, lab-sized EKS cluster.
+# Create with:  eksctl create cluster -f eks/cluster.yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: eks-website-lab
+  region: us-east-1
+  version: "1.31"
+  tags:
+    project: eks-website-lab
+
+iam:
+  withOIDC: true            # enables IAM Roles for Service Accounts (IRSA)
+
+managedNodeGroups:
+  - name: web-nodes
+    instanceType: t3.medium
+    desiredCapacity: 2
+    minSize: 1
+    maxSize: 3
+    volumeSize: 20
+    labels:
+      role: web
+    iam:
+      withAddonPolicies:
+        cloudWatch: true
+
+addons:
+  - name: vpc-cni
+  - name: coredns
+  - name: kube-proxy
+  - name: metrics-server    # needed by the HorizontalPodAutoscaler

@@ -1,0 +1,17 @@
+# Exposes the Deployment to the internet through an AWS load balancer.
+# On EKS, a Service of type LoadBalancer provisions an AWS ELB automatically.
+apiVersion: v1
+kind: Service
+metadata:
+  name: website
+  namespace: website
+  labels:
+    app: website
+spec:
+  type: LoadBalancer
+  selector:
+    app: website
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
